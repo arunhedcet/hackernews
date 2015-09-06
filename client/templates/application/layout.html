@@ -1,0 +1,15 @@
+<template name="layout">
+	<body fullbleed layout vertical>
+	<core-header-panel flex>
+		<div class="core-header">
+			{{> header}}
+		</div>
+
+		<div class="content" style="color:black;" fit>
+			{{> errors}}
+			{{> yield}}
+		</div>
+
+	</core-header-panel>
+	</body>
+</template>

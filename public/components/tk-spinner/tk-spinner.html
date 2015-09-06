@@ -1,0 +1,47 @@
+<link rel="import" href="../polymer/polymer.html">
+
+
+
+<polymer-element name="tk-spinner" attributes="opened autoCloseDisabled">
+    <template>
+        <style>
+        :host {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            overflow: hidden;
+            background: white;
+            padding: 5px 5px;
+            outline: 1px solid rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        </style>
+        <core-overlay id="overlay" layered="" backdrop="" opened="{{opened}}" autoclosedisabled="{{autoCloseDisabled}}" transition="core-transition-top" style="overflow:hidden;">
+            <paper-spinner active style="margin:5px;padding:5px;background:white;border-radius:50%;"></paper-spinner>
+        </core-overlay>
+
+
+        <content></content>
+    </template>
+    <script>
+    Polymer('tk-spinner', {
+
+        ready: function() {
+        },
+
+        toggle: function() {
+            this.$.overlay.toggle();
+        },
+        open: function() {
+            this.$.overlay.open();
+        },
+        close: function() {
+            this.$.overlay.close();
+        }
+
+    });
+    </script>
+</polymer-element>

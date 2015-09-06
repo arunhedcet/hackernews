@@ -1,0 +1,38 @@
+<template name="header">
+	<core-toolbar class="toolbar toolbar-primary shadowed">
+		<a href="{{pathFor 'home'}}"><paper-button>Hackernews</paper-button></a>
+		<a href="{{pathFor 'newPosts'}}" class="{{activeRouteClass 'home' 'newPosts'}}">
+			<paper-button center-justified="" horizontal=""
+																		 layout="">New</paper-button>
+		</a>
+		<a href="{{pathFor 'bestPosts'}}" class="{{activeRouteClass  'bestPosts'}}">
+			<paper-button center-justified="" horizontal=""
+																		 layout="">Best</paper-button>
+		</a>
+		{{#if currentUser}}
+		<a href="{{pathFor 'postSubmit'}}" class="{{activeRouteClass 'postSubmit'}}">
+			<paper-button center-justified="" horizontal="" layout="" >Submit Post</paper-button>
+		</a>
+		<paper-menu-button class="hidden-md narrow">
+			<paper-icon-button icon="menu" role="button"></paper-icon-button>
+			<paper-dropdown class="dropdown" halign="right">
+				<core-menu class="menu">
+					{{> notifications}}
+				</core-menu>
+			</paper-dropdown>
+		</paper-menu-button>
+		{{/if}}
+		<div flex></div>
+	<ul class="nav navbar-nav navbar-right" style="color:black;">
+        {{> loginButtons}}
+      </ul>
+		<paper-menu-button class="hidden-md narrow">
+			<paper-icon-button icon="menu" role="button"></paper-icon-button>
+			<paper-dropdown class="dropdown" halign="left">
+				<core-menu class="menu">
+					{{> loginButtons}}
+				</core-menu>
+			</paper-dropdown>
+		</paper-menu-button>
+	</core-toolbar>
+</template>

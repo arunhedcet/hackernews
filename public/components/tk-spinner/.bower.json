@@ -1,0 +1,32 @@
+{
+  "name": "tk-spinner",
+  "version": "0.0.2",
+  "homepage": "https://github.com/arunhedcet/tk-spinner",
+  "authors": [
+    "Arun <aruntknambiar@gmail.com>"
+  ],
+  "description": "A simple spinner with backdrop and in/out animations.",
+  "main": "tk-spinner.html",
+  "keywords": [
+    "polymer",
+    "spinner"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components/",
+    "test",
+    "tests"
+  ],
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.2",
+    "commit": "e01c6b20e41bb3d2d8c13f3bd80d5a9dbc503ea7"
+  },
+  "_source": "git://github.com/arunhedcet/tk-spinner.git",
+  "_target": "0.0.2",
+  "_originalSource": "arunhedcet/tk-spinner"
+}

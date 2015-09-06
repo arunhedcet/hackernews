@@ -1,0 +1,20 @@
+<template name="postsList">
+  <div class="posts page" vertical layout>
+    <div class="wrapper" vertical layout>
+      {{#each posts}}
+        {{> postItem}}
+      {{/each}}
+    </div>
+    
+    {{#if nextPath}}
+		<div horizontal layout center center-justified>
+		<a href="{{nextPath}}"><paper-button raised>Load
+				more</paper-button></a>
+		</div>
+    {{else}}
+      {{#unless ready}}
+        {{> spinner}}
+      {{/unless}}
+    {{/if}}
+  </div>
+</template>

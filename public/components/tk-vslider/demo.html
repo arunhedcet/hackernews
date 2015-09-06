@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <title>tk-vslider</title>
+  
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <script src="../webcomponentsjs/webcomponents.js"></script>
+  
+  <link rel="import" href="tk-vslider.html">
+  <link rel="import" href="../font-roboto/roboto.html">
+  
+  <style shim-shadowdom>
+  
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      margin: 0;
+      padding: 24px;
+    }
+    
+    tk-vslider {
+      width: 100%;
+    }
+    
+    section {
+      max-width: 1000px;
+      padding: 20px 0;
+      background-color: #f0f0f0;
+    }
+    
+    section > div {
+      padding: 14px;
+    }
+    
+    .yellow-slider tk-vslider::shadow #sliderKnobInner,
+    .yellow-slider tk-vslider::shadow #sliderBar::shadow #activeProgress {
+      background-color: #f4b400;
+    }
+    
+    .green-slider tk-vslider::shadow #sliderKnobInner,
+    .green-slider tk-vslider::shadow #sliderKnobInner::before,
+    .green-slider tk-vslider::shadow #sliderBar::shadow #activeProgress {
+      background-color: #0f9d58;
+    }
+    
+    #ratingsLabel {
+      padding-left: 12px;
+      color: #a0a0a0;
+    }
+    
+  </style>
+  
+</head>
+<body unresolved>
+
+  <section class="yellow-slider">
+  
+    <div>Music, video, games &amp; other media</div>
+    <tk-vslider value="50"></tk-vslider>
+    
+    <br>
+    <br>
+    
+    <div>Notifications</div>
+    <tk-vslider value="50"></tk-vslider>
+    
+    <br>
+    <br>
+    
+    <div>Alarms</div>
+    <tk-vslider value="80"></tk-vslider>
+    
+  </section>
+  
+  <br>
+  
+  <section>
+  
+    <div center horizontal layout>
+      <div>R</div>
+      <tk-vslider value="23" max="255" editable></tk-vslider>
+    </div>
+    
+    <br>
+    <br>
+    
+    <div center horizontal layout>
+      <div>G</div>
+      <tk-vslider value="183" max="255" editable></tk-vslider>
+    </div>
+    
+    <br>
+    <br>
+    
+    <div center horizontal layout>
+      <div>B</div>
+      <tk-vslider value="211" max="255" editable></tk-vslider>
+    </div>
+    
+  </section>
+  
+  <br>
+  
+  <section class="green-slider">
+  
+    <div>Brightness</div>
+    <br>
+    <tk-vslider pin value="50"></tk-vslider>
+  
+  </section>
+  
+  <br>
+  
+  <section class="green-slider">
+  
+    <div>
+      <span>Ratings</span><span id="ratingsLabel"></span>
+    </div>
+    <br>
+    <tk-vslider id="ratings" pin snaps max="10" step="1" value="5"></tk-vslider>
+  
+  </section>
+  
+  <script>
+  
+    var ratings = document.querySelector('#ratings');
+    ratings.addEventListener('core-change', function() {
+      document.querySelector('#ratingsLabel').textContent = ratings.value;
+    });
+  
+  </script>
+  
+</body>
+</html>
