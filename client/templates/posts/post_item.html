@@ -1,14 +1,15 @@
 <template name="postItem">
-	<paper-shadow class="post">
+	<paper-shadow class="post" layout horizontal>
 		{{#if upvoted}}
-		<core-tooltip label="Please login to like the post." position="right">
+		<core-tooltip label="{{#if currentUser}}You have already upvoted the
+			post.{{else}}Please login to upvote.{{/if}}" position="right">
 			<paper-icon-button class="upvote btn-default disabled" icon="thumb-up"
 																													disabled></paper-icon-button>
 		</core-tooltip>
 		{{else}}
-		<paper-icon-button class="upvote btn-default" icon="thumb-up"></paper-icon-button>
+		<paper-icon-button class="upvote btn-default btn-primary upvotable" icon="thumb-up"></paper-icon-button>
 		{{/if}}
-		<div class="post-content">
+		<div flex class="post-content">
 			<h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
 			<p>
 			{{pluralize votes "Vote"}},
