@@ -48,9 +48,10 @@ Template.postSubmit.events({
 	},
 	'submit form': function(e) {
 		e.preventDefault();
-
+		var urlVal = $(e.target).find('[name=url]').val();
+		urlVal = urlVal.match(/http:\/\//g)?urlVal : "http://"+urlVal;
 		var post = {
-			url: $(e.target).find('[name=url]').val(),
+			url: urlVal,
 			title: $(e.target).find('[name=title]').val()
 		};
 
