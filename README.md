@@ -9,5 +9,16 @@
 7. Vulcanize polymer components into a single file - `vulcanize -o public/build.html public/pol.html `
 8. Run app - `meteor`.
 
+##How to use the app##
+1. Landing page is where you have all the posts in chronological order
+1. To switch the sorting order from chronological to best rated click on the
+	 button named best in the header.
+1. You have to sign in to add posts,vote or add comments
+1. Title corresponding to the url you have entered will be autofilled when you
+	 trigger the input field blur event. ie click somewhere else in the document.
+1. Wait for the spinner to stop and then you can choose whether to stick with
+	 the default title or change it to something else.
+1. Use load more button in the bottom to load more posts
+
 *tkay*
 
